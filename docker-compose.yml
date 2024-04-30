@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  backend:
+    image: domn64/fitrack-bknd
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: ${MONGO_URI}
+    restart: unless-stopped
+
+  frontend:
+    image: domn64/fitrack-frtnd
+    ports:
+      - "8001:3000"
+    restart: unless-stopped
